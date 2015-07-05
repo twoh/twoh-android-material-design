@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <include layout="@layout/view_toolbar"/>
+
+    <TextView
+        android:text="@string/hello_world"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/bt_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Floating Action Button"/>
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/bt_tab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tab Layout"/>
+
+</LinearLayout>

@@ -1,0 +1,40 @@
+<resources>
+
+    <style name="Base.Theme.TWOHThemeApp" parent="Theme.AppCompat.NoActionBar">
+
+        <item name="colorPrimary">@color/twoh_primary</item>
+
+        <!--   darker variant for the status bar and contextual app bars -->
+        <item name="colorPrimaryDark">@color/twoh_primary_dark</item>
+
+        <!--   theme UI controls like checkboxes and text fields e.g. FloatActionButton -->
+        <item name="colorAccent">@color/twoh_accent</item>
+
+        <!-- Title Text Color -->
+        <item name="android:textColorPrimary">@color/twoh_icons</item>
+
+        <!-- color of the menu overflow icon (three vertical dots) -->
+        <item name="android:textColorSecondary">@color/twoh_icons</item>
+
+
+        <item name="android:windowBackground">@color/window_background</item>
+    </style>
+
+    <!--
+       Base application theme, dependent on API level. This theme is replaced
+       by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+   -->
+    <style name="AppBaseTheme" parent="Base.Theme.TWOHThemeApp">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+</resources>
