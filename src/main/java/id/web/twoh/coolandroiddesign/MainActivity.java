@@ -13,6 +13,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     private Button btFab;
+    private Button btTil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, FloatingActionButtonActivity.class));
+            }
+        });
+
+        btTil = (Button) findViewById(R.id.bt_til);
+        btTil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, TextInputActivity.class));
             }
         });
     }
