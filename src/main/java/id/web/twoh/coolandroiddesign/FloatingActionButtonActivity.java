@@ -22,7 +22,12 @@ public class FloatingActionButtonActivity extends AppCompatActivity{
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(findViewById(R.id.ly_fab), "This is Snackbar", Snackbar.LENGTH_LONG).setAction("Action", this).show();
+                Snackbar.make(findViewById(R.id.ly_fab), "Contoh sebuah Snackbar", Snackbar.LENGTH_LONG).setAction("Click me!", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                }).show();
             }
         });
     }
