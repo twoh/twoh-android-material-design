@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btFab;
     private Button btTil;
+    private Button btNav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, TextInputActivity.class));
+            }
+        });
+
+        btNav = (Button) findViewById(R.id.bt_nav_view);
+        btNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, NavigationViewActivity.class));
             }
         });
     }

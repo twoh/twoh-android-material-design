@@ -22,6 +22,11 @@
         android:layout_height="wrap_content"
         android:text="Text Input Layout"/>
     <android.support.v7.widget.AppCompatButton
+        android:id="@+id/bt_nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Navigation View"/>
+    <android.support.v7.widget.AppCompatButton
         android:id="@+id/bt_tab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
