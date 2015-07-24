@@ -5,18 +5,18 @@
 
     <group android:checkableBehavior="all">
         <item
-            android:id="@+id/navigation_item_1"
+            android:id="@+id/nav_home"
             android:icon="@drawable/ic_add_white"
-            android:title="Toolbar"/>
+            android:title="Home"/>
         <item
-            android:id="@+id/navigation_item_2"
+            android:id="@+id/nav_my_profile"
             android:icon="@drawable/ic_add_white"
-            android:title="FloatActionButton"/>
+            android:title="My Profile"/>
 
         <item
-            android:id="@+id/navigation_item_3"
+            android:id="@+id/nav_settings"
             android:icon="@drawable/ic_add_white"
-            android:title="NavigationView"/>
+            android:title="Settings"/>
     </group>
 
 </menu>
