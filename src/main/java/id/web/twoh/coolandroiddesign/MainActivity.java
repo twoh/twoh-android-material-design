@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btFab;
     private Button btTil;
     private Button btNav;
+    private Button btTab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, NavigationViewActivity.class));
+            }
+        });
+
+        btTab = (Button) findViewById(R.id.bt_tab);
+        btTab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, TabLayoutActivity.class));
             }
         });
     }
