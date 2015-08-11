@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     private Button btTil;
     private Button btNav;
     private Button btTab;
+    private Button btAppBar;
+    private Button collapseTool;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,11 +48,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btAppBar = (Button) findViewById(R.id.bt_appcontainer);
+        btAppBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, AppContainerTabActivity.class));
+            }
+        });
+
         btTab = (Button) findViewById(R.id.bt_tab);
         btTab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, TabLayoutActivity.class));
+            }
+        });
+
+        collapseTool = (Button) findViewById(R.id.bt_coll);
+        collapseTool.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, CollapsingToolbarActivity.class));
             }
         });
     }

@@ -3,4 +3,9 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="long_text">According to German scholar and Chopin biographer Frederick Niecks (1845–1924) Chopin said to his German pupil and copyist Adolph Gutmann (1819–1882) that he "had never in his life written another such beautiful melody (‘chant’); and on one occasion when Gutmann was studying it the master lifted his arms with his hands clasped and exclaimed: ‘O, my fatherland!’ ("O, me [sic] patrie!")"[4] Niecks writes that this study "may be reckoned among Chopin’s loveliest compositions" as it "combines classical chasteness of contour with the fragrance of romanticism."
+    </string>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
 </resources>

@@ -25,7 +25,13 @@
         <activity android:name=".NavigationViewActivity"
             android:label="@string/app_name"
             />
+        <activity android:name=".AppContainerTabActivity"
+            android:label="@string/app_name"
+            />
         <activity android:name=".TabLayoutActivity"
+            android:label="@string/app_name"
+            />
+        <activity android:name=".CollapsingToolbarActivity"
             android:label="@string/app_name"
             />
     </application>

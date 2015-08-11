@@ -32,4 +32,15 @@
         android:layout_height="wrap_content"
         android:text="Tab Layout"/>
 
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/bt_appcontainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AppBar &amp; Container Layout"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/bt_coll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Collapsing Toolbar"/>
 </LinearLayout>

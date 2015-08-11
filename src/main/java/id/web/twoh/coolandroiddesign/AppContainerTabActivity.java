@@ -1,22 +1,26 @@
 package id.web.twoh.coolandroiddesign;
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 /**
- * Created by Hafizh Herdi on 8/3/2015 www.twoh.co
+ * Created by Hafizh Herdi on 7/2/2015 www.twoh.co
  */
-public class TabLayoutActivity extends AppCompatActivity{
+public class AppContainerTabActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
+    private FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tab);
+        setContentView(R.layout.activity_container_ly);
 
         setupToolbar();
 
@@ -29,6 +33,19 @@ public class TabLayoutActivity extends AppCompatActivity{
         tabLayout.addTab(tabLayout.newTab().setText("About"));
         tabLayout.addTab(tabLayout.newTab().setText("Help"));
         tabLayout.addTab(tabLayout.newTab().setText("Friends"));
+
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(findViewById(R.id.coor_Layout), "Contoh sebuah Snackbar", Snackbar.LENGTH_LONG).setAction("Click me!", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                }).show();
+            }
+        });
     }
 
     private void setupToolbar(){
@@ -38,4 +55,6 @@ public class TabLayoutActivity extends AppCompatActivity{
         ab.setHomeAsUpIndicator(R.drawable.ic_menu);
         ab.setDisplayHomeAsUpEnabled(true);
     }
+
 }
+
