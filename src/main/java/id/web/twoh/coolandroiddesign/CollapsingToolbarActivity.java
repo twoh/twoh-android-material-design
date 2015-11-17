@@ -28,15 +28,19 @@ public class CollapsingToolbarActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        // pengaturan dan inisialisasi collapsing toolbar
         collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         collapsingToolbar.setTitle("TWOH's Engineering");
         collapsingToolbar.setExpandedTitleColor(Color.parseColor("#44ffffff"));
 
+        // inisialisasi ImageView
         ImageView header = (ImageView) findViewById(R.id.iv_header);
 
+        // mengambil gambar bitmap yang digunakan pada image view
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
                 R.drawable.header);
 
+        // mengekstrak warna dari gambar yang digunakan
         Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
             @Override
             public void onGenerated(Palette palette) {
