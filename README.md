@@ -6,7 +6,7 @@ Will be updated as the newest features are released!
 ## Installation
 
 1. Clone this project
-2. Immport as a module on Android Studio
+2. Import as a module on Android Studio
 3. Sync & run it
 
 ## Credits
