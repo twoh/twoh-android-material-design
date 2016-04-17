@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btTab;
     private Button btAppBar;
     private Button collapseTool;
+    private Button refreshViewBut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +70,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, CollapsingToolbarActivity.class));
+            }
+        });
+
+        refreshViewBut = (Button) findViewById(R.id.bt_refreshview);
+        refreshViewBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,RefreshViewActivity.class));
             }
         });
     }
