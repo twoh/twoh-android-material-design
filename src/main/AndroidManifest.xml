@@ -37,6 +37,9 @@
         <activity android:name=".RefreshViewActivity"
             android:label="@string/app_name"
             />
+        <activity android:name=".RecyclerViewActivity"
+            android:label="@string/app_name"
+            />
     </application>
 
 </manifest>

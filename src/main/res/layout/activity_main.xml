@@ -55,13 +55,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Collapsing Toolbar Image"/>
-
     <android.support.v7.widget.AppCompatButton
         android:layout_margin="4dp"
         android:id="@+id/bt_refreshview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Refresh View"/>
+    <android.support.v7.widget.AppCompatButton
+        android:layout_margin="4dp"
+        android:id="@+id/bt_recview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Recycler View Tutorial"/>
 
     </LinearLayout>
 </LinearLayout>
