@@ -20,7 +20,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        // each data item is just a string in this case
+
+        // di tutorial ini kita hanya menggunakan data String untuk tiap item
         public TextView tvTitle;
         public TextView tvSubtitle;
 
@@ -33,17 +34,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // create a new view
+        // membuat view baru
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_rv_item, parent, false);
-        // set the view's size, margins, paddings and layout parameters
+        // mengeset ukuran view, margin, padding, dan parameter layout lainnya
         ViewHolder vh = new ViewHolder(v);
         return vh;
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        // - get element from your dataset at this position
-        // - replace the contents of the view with that element
+        // - mengambil elemen dari dataset (ArrayList) pada posisi tertentu
+        // - mengeset isi view dengan elemen dari dataset tersebut
         final String name = rvData.get(position);
         holder.tvTitle.setText(rvData.get(position));
         holder.tvTitle.setOnClickListener(new View.OnClickListener() {
@@ -58,6 +59,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public int getItemCount() {
+        // menghitung ukuran dataset / jumlah data yang ditampilkan di RecyclerView
         return rvData.size();
     }
 

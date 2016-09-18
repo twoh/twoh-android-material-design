@@ -28,6 +28,11 @@ public class RecyclerViewActivity extends AppCompatActivity {
         rvView = (RecyclerView) findViewById(R.id.rv_main);
         rvView.setHasFixedSize(true);
 
+        /**
+         * Kita menggunakan LinearLayoutManager untuk list standar
+         * yang hanya berisi daftar item
+         * disusun dari atas ke bawah
+         */
         layoutManager = new LinearLayoutManager(this);
         rvView.setLayoutManager(layoutManager);
 
@@ -38,6 +43,11 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
     private void initDataset(){
 
+        /**
+         * Tambahkan item ke dataset
+         * dalam prakteknya bisa bermacam2
+         * tidak hanya String seperti di kasus ini
+         */
         dataSet.add("Karin");
         dataSet.add("Ingrid");
         dataSet.add("Helga");
