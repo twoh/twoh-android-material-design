@@ -5,6 +5,7 @@
     android:padding="4dp">
 
     <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cv_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
@@ -42,7 +43,7 @@
 
             <TextView
                 android:id="@+id/tv_title"
-                android:layout_width="fill_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_above="@id/tv_subtitle"
                 android:layout_alignParentRight="true"

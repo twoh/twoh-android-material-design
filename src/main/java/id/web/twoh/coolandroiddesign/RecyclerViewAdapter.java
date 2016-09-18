@@ -1,5 +1,7 @@
 package id.web.twoh.coolandroiddesign;
 
+import android.support.design.widget.Snackbar;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,11 +26,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         // di tutorial ini kita hanya menggunakan data String untuk tiap item
         public TextView tvTitle;
         public TextView tvSubtitle;
+        public CardView cvMain;
 
         public ViewHolder(View v) {
             super(v);
             tvTitle = (TextView) v.findViewById(R.id.tv_title);
             tvSubtitle = (TextView) v.findViewById(R.id.tv_subtitle);
+            cvMain = (CardView) v.findViewById(R.id.cv_main);
         }
     }
 
@@ -47,6 +51,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         // - mengeset isi view dengan elemen dari dataset tersebut
         final String name = rvData.get(position);
         holder.tvTitle.setText(rvData.get(position));
+
+        // Set onclicklistener pada view tvTitle (TextView)
         holder.tvTitle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,6 +61,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         });
 
         holder.tvSubtitle.setText("Frau " + position);
+
+        // Set onclicklistener pada view cvMain (CardView)
+        holder.cvMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Clicked element "+name, Snackbar.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override
