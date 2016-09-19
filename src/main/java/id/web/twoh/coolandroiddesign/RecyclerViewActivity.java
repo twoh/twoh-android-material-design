@@ -3,7 +3,6 @@ package id.web.twoh.coolandroiddesign;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -51,9 +50,19 @@ public class RecyclerViewActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                // menyiapkan integer random dari 0 - 9
                 int i = new Random().nextInt(9 - 0 + 1);
+
+                // mengambil nama pada posisi random 0 - 9
                 String additional = addDataSet.get(i);
+
+                // memasukkan nama tersebut ke dalam
+                // daftar nama di RecyclerView
                 ((RecyclerViewAdapter)adapter).add(dataSet.size(), additional);
+
+                // membuat RecyclerView otomatis
+                // scroll ke bawah setelah nama baru ditambahkan
                 rvView.scrollToPosition(dataSet.size()-1);
             }
         });
