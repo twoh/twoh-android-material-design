@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuItem;
 
 /**
  * Created by Hafizh Herdi on 7/9/2015.
@@ -24,14 +25,11 @@ public class TextInputActivity extends AppCompatActivity {
         // enable home button untuk navigasi
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        // mengeset icon untuk home button Toolbar
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
-
         // mengeset title/nama aplikasi
         getSupportActionBar().setTitle("TWOH's Engineering");
 
         // mengeset subtitle
-        getSupportActionBar().setSubtitle("Tutorial Material Design");
+        getSupportActionBar().setSubtitle("Tutorial TextInputLayout");
 
         // set logo toolbar
         getSupportActionBar().setDisplayUseLogoEnabled(true);
@@ -42,6 +40,18 @@ public class TextInputActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case android.R.id.home :
+                finish();
+                break;
+        }
+
         return true;
     }
 }

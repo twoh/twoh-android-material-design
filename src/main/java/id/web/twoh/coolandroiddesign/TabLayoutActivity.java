@@ -5,6 +5,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 
 /**
  * Created by Hafizh Herdi on 8/3/2015 www.twoh.co
@@ -53,7 +54,19 @@ public class TabLayoutActivity extends AppCompatActivity{
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         final ActionBar ab = getSupportActionBar();
-        ab.setHomeAsUpIndicator(R.drawable.ic_menu);
         ab.setDisplayHomeAsUpEnabled(true);
+        ab.setTitle("Tab Layout Example");
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case android.R.id.home :
+                finish();
+                break;
+        }
+
+        return true;
     }
 }

@@ -3,9 +3,11 @@ package id.web.twoh.coolandroiddesign;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 /**
@@ -27,13 +29,8 @@ public class PaletteActivity extends AppCompatActivity{
 
         initViews();
         paintTextBackground();
-        setToolbar();
+        setupToolbar();
 
-    }
-
-    private void setToolbar(){
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("TWOH's Palette Tutorial");
     }
 
     private void initViews() {
@@ -72,5 +69,25 @@ public class PaletteActivity extends AppCompatActivity{
         });
 
 
+    }
+
+    private void setupToolbar(){
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        final ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
+        ab.setTitle("TWOH's Palette View Example");
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case android.R.id.home :
+                finish();
+                break;
+        }
+
+        return true;
     }
 }

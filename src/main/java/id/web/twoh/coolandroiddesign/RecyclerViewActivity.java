@@ -3,9 +3,12 @@ package id.web.twoh.coolandroiddesign;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -66,6 +69,8 @@ public class RecyclerViewActivity extends AppCompatActivity {
                 rvView.scrollToPosition(dataSet.size()-1);
             }
         });
+
+        setupToolbar();
     }
 
     private void initDataset(){
@@ -96,5 +101,25 @@ public class RecyclerViewActivity extends AppCompatActivity {
         addDataSet.add("Katrin");
         addDataSet.add("Katharina");
         addDataSet.add("Liselotte");
+    }
+
+    private void setupToolbar(){
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        final ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
+        ab.setTitle("Recycler View Example");
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case android.R.id.home :
+                finish();
+                break;
+        }
+
+        return true;
     }
 }

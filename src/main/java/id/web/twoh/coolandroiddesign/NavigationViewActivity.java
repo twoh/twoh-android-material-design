@@ -70,9 +70,6 @@ public class NavigationViewActivity extends AppCompatActivity {
         // set toolbar ke dalam support action bar
         setSupportActionBar(toolbar);
 
-        // enable home button untuk navigasi
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         // mengeset icon untuk home button Toolbar
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
 
@@ -85,5 +82,6 @@ public class NavigationViewActivity extends AppCompatActivity {
         // set logo toolbar
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.ic_launcher);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

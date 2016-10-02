@@ -3,7 +3,10 @@ package id.web.twoh.coolandroiddesign;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 
 /**
@@ -30,8 +33,28 @@ public class FloatingActionButtonActivity extends AppCompatActivity{
                 }).show();
             }
         });
+
+        setupToolbar();
     }
 
+    private void setupToolbar(){
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        final ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
+        ab.setTitle("Floating Action Button Example");
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case android.R.id.home :
+                finish();
+                break;
+        }
+
+        return true;
+    }
 
 }
