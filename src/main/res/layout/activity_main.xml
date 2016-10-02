@@ -67,6 +67,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Recycler View Tutorial"/>
+    <android.support.v7.widget.AppCompatButton
+        android:layout_margin="4dp"
+        android:id="@+id/bt_pallete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Palette Tutorial"/>
 
     </LinearLayout>
 </LinearLayout>

@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Button collapseTool;
     private Button refreshViewBut;
     private Button btRecyclerView;
+    private Button btPallete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +88,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this,RecyclerViewActivity.class));
+            }
+        });
+
+        btPallete = (Button) findViewById(R.id.bt_pallete);
+        btPallete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, PaletteActivity.class));
             }
         });
     }

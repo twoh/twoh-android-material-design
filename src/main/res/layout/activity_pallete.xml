@@ -2,46 +2,57 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin">
+    android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/ivWallpaper"
+    <include
+        layout="@layout/view_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@drawable/draw_pallete" />
+        android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/tvVibrant"
-        style="@style/tvPalleteStyle"
-        android:text="@string/vibrant" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
 
-    <TextView
-        android:id="@+id/tvVibrantLight"
-        style="@style/tvPalleteStyle"
-        android:text="@string/vibrant_light" />
+        <ImageView
+            android:id="@+id/ivWallpaper"
+            android:layout_width="match_parent"
+            android:layout_height="275dp"
+            android:src="@drawable/face2" />
 
-    <TextView
-        android:id="@+id/tvVibrantDark"
-        style="@style/tvPalleteStyle"
-        android:text="@string/vibrant_dark" />
+        <TextView
+            android:id="@+id/tvVibrant"
+            style="@style/tvPalleteStyle"
+            android:layout_marginTop="10dp"
+            android:text="@string/vibrant" />
 
-    <TextView
-        android:id="@+id/tvMuted"
-        style="@style/tvPalleteStyle"
-        android:text="@string/muted" />
+        <TextView
+            android:id="@+id/tvVibrantLight"
+            style="@style/tvPalleteStyle"
+            android:text="@string/vibrant_light" />
 
-    <TextView
-        android:id="@+id/tvMutedLight"
-        style="@style/tvPalleteStyle"
-        android:text="@string/muted_light" />
+        <TextView
+            android:id="@+id/tvVibrantDark"
+            style="@style/tvPalleteStyle"
+            android:text="@string/vibrant_dark" />
 
-    <TextView
-        android:id="@+id/tvMutedDark"
-        style="@style/tvPalleteStyle"
-        android:text="@string/muted_dark" />
+        <TextView
+            android:id="@+id/tvMuted"
+            style="@style/tvPalleteStyle"
+            android:text="@string/muted" />
 
+        <TextView
+            android:id="@+id/tvMutedLight"
+            style="@style/tvPalleteStyle"
+            android:text="@string/muted_light" />
+
+        <TextView
+            android:id="@+id/tvMutedDark"
+            style="@style/tvPalleteStyle"
+            android:text="@string/muted_dark" />
+    </LinearLayout>
 </LinearLayout>

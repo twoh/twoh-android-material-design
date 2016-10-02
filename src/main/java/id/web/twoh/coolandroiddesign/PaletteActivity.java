@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
+import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
 /**
@@ -26,9 +27,14 @@ public class PaletteActivity extends AppCompatActivity{
 
         initViews();
         paintTextBackground();
+        setToolbar();
 
     }
 
+    private void setToolbar(){
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("TWOH's Palette Tutorial");
+    }
 
     private void initViews() {
         vibrantView = (TextView) findViewById(R.id.tvVibrant);
@@ -42,12 +48,12 @@ public class PaletteActivity extends AppCompatActivity{
 
     private void paintTextBackground() {
 
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.draw_pallete);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.lena);
 
         Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
             @Override
             public void onGenerated(Palette palette) {
-                //work with the palette here
+                // ambil warna dari gambar menggunakan Palette
                 int defaultValue = 0x000000;
                 int vibrant = palette.getVibrantColor(defaultValue);
                 int vibrantLight = palette.getLightVibrantColor(defaultValue);
