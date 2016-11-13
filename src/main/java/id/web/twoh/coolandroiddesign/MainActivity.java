@@ -1,10 +1,16 @@
 package id.web.twoh.coolandroiddesign;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v4.text.util.LinkifyCompat;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.util.Linkify;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,7 +19,9 @@ import android.widget.Button;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
-public class MainActivity extends AppCompatActivity {
+import static android.R.attr.button;
+
+public class MainActivity extends BaseAdsActivity {
 
     private Button btFab;
     private Button btTil;
@@ -27,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setupToolbar();
         btFab = (Button) findViewById(R.id.bt_fab);
@@ -101,17 +108,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, PaletteActivity.class));
             }
         });
-
-        AdView mAdView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice("22FFB74E3E00DEC909938864EE0B401E").build();
-        mAdView.loadAd(adRequest);
+        super.onCreate(savedInstanceState);
     }
 
     private void setupToolbar(){
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         final ActionBar ab = getSupportActionBar();
-        ab.setHomeAsUpIndicator(R.drawable.ic_menu);
+        ab.setHomeAsUpIndicator(R.mipmap.ic_launcher);
         ab.setDisplayHomeAsUpEnabled(true);
     }
 
@@ -131,9 +135,30 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            open();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void open(){
+
+
+        SpannableString str = new SpannableString("Copyright © : TWOh's Engineering " +
+                "\nTutorial lengkap di http://www.twoh.co/mudengdroid-belajar-android-bersama-twohs-engineering/android-design-tutorial/");
+        LinkifyCompat.addLinks(str, Linkify.WEB_URLS);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setMessage(str);
+                alertDialogBuilder.setPositiveButton("OK",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface arg0, int arg1) {
+                                arg0.dismiss();
+                            }
+                        });
+
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
     }
 }

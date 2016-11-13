@@ -13,14 +13,14 @@ import android.view.View;
 /**
  * Created by Hafizh Herdi on 7/2/2015 www.twoh.co
  */
-public class AppContainerTabActivity extends AppCompatActivity {
+public class AppContainerTabActivity extends BaseAdsActivity {
 
     private TabLayout tabLayout;
     private FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_container_ly);
 
         setupToolbar();
@@ -47,6 +47,7 @@ public class AppContainerTabActivity extends AppCompatActivity {
                 }).show();
             }
         });
+        super.onCreate(savedInstanceState);
     }
 
     private void setupToolbar(){

@@ -15,13 +15,13 @@ import android.widget.ImageView;
 /**
  * Created by Hafizh Herdi on 8/11/2015 www.twoh.co
  */
-public class CollapsingToolbarActivity extends AppCompatActivity {
+public class CollapsingToolbarActivity extends BaseAdsActivity {
     CollapsingToolbarLayout collapsingToolbar;
     int mutedColor = R.attr.colorPrimary;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_collapse_toolbar);
 
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -48,7 +48,7 @@ public class CollapsingToolbarActivity extends AppCompatActivity {
                 collapsingToolbar.setContentScrimColor(mutedColor);
             }
         });
-
+        super.onCreate(savedInstanceState);
     }
 
     @Override

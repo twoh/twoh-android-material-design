@@ -13,7 +13,7 @@ import android.widget.TextView;
 /**
  * Created by Herdi_WORK on 18.09.16.
  */
-public class PaletteActivity extends AppCompatActivity{
+public class PaletteActivity extends BaseAdsActivity{
 
     private TextView vibrantView;
     private TextView vibrantLightView;
@@ -24,9 +24,9 @@ public class PaletteActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pallete);
 
+        setContentView(R.layout.activity_pallete);
+        super.onCreate(savedInstanceState);
         initViews();
         paintTextBackground();
         setupToolbar();
@@ -45,7 +45,7 @@ public class PaletteActivity extends AppCompatActivity{
 
     private void paintTextBackground() {
 
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.lena);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.face2);
 
         Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
             @Override

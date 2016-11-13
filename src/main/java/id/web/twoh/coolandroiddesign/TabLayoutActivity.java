@@ -10,13 +10,13 @@ import android.view.MenuItem;
 /**
  * Created by Hafizh Herdi on 8/3/2015 www.twoh.co
  */
-public class TabLayoutActivity extends AppCompatActivity{
+public class TabLayoutActivity extends BaseAdsActivity{
 
     private TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_tab);
 
         setupToolbar();
@@ -48,6 +48,7 @@ public class TabLayoutActivity extends AppCompatActivity{
 
             }
         });
+        super.onCreate(savedInstanceState);
     }
 
     private void setupToolbar(){

@@ -14,7 +14,7 @@ import android.widget.TextView;
 /**
  * Created by Hafizh Herdi on 4/17/2016.
  */
-public class RefreshViewActivity extends AppCompatActivity{
+public class RefreshViewActivity extends BaseAdsActivity{
 
     SwipeRefreshLayout swLayout;
     LinearLayout llayout;
@@ -22,7 +22,7 @@ public class RefreshViewActivity extends AppCompatActivity{
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_refreshview);
         swLayout = (SwipeRefreshLayout) findViewById(R.id.swlayout);
         llayout = (LinearLayout) findViewById(R.id.ll_swiperefresh);
@@ -43,6 +43,7 @@ public class RefreshViewActivity extends AppCompatActivity{
         });
 
         setupToolbar();
+        super.onCreate(savedInstanceState);
     }
 
     private void setupToolbar(){

@@ -17,7 +17,7 @@ import java.util.Random;
 /**
  * Created by Herdi_WORK on 15.09.16.
  */
-public class RecyclerViewActivity extends AppCompatActivity {
+public class RecyclerViewActivity extends BaseAdsActivity {
 
     private RecyclerView rvView;
     private RecyclerView.Adapter adapter;
@@ -28,8 +28,9 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_recyclerview);
+        super.onCreate(savedInstanceState);
         dataSet = new ArrayList<>();
         addDataSet = new ArrayList<>();
 

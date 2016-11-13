@@ -9,11 +9,10 @@ import android.view.MenuItem;
 /**
  * Created by Hafizh Herdi on 7/9/2015.
  */
-public class TextInputActivity extends AppCompatActivity {
+public class TextInputActivity extends BaseAdsActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_textinput);
 
         // findview toolbar
@@ -34,6 +33,7 @@ public class TextInputActivity extends AppCompatActivity {
         // set logo toolbar
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.ic_launcher);
+        super.onCreate(savedInstanceState);
     }
 
     @Override

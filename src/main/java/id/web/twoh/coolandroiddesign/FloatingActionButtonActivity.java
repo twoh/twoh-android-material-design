@@ -12,13 +12,12 @@ import android.view.View;
 /**
  * Created by Hafizh Herdi on 7/2/2015 www.twoh.co
  */
-public class FloatingActionButtonActivity extends AppCompatActivity{
+public class FloatingActionButtonActivity extends BaseAdsActivity{
 
     private FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fab);
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -35,6 +34,7 @@ public class FloatingActionButtonActivity extends AppCompatActivity{
         });
 
         setupToolbar();
+        super.onCreate(savedInstanceState);
     }
 
     private void setupToolbar(){

@@ -12,7 +12,7 @@ import android.widget.Toast;
 /**
  * Created by Hafizh Herdi on 7/23/2015.
  */
-public class NavigationViewActivity extends AppCompatActivity {
+public class NavigationViewActivity extends BaseAdsActivity {
 
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
@@ -20,7 +20,6 @@ public class NavigationViewActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nav_view);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         setupToolbar();
@@ -51,6 +50,7 @@ public class NavigationViewActivity extends AppCompatActivity {
                 return true;
             }
         });
+        super.onCreate(savedInstanceState);
     }
 
     @Override
