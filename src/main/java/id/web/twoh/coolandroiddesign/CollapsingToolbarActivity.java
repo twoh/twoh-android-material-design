@@ -38,7 +38,7 @@ public class CollapsingToolbarActivity extends BaseAdsActivity {
 
         // mengambil gambar bitmap yang digunakan pada image view
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
-                R.drawable.header);
+                R.drawable.header2);
 
         // mengekstrak warna dari gambar yang digunakan
         Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {

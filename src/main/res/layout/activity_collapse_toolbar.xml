@@ -24,7 +24,7 @@
                 android:id="@+id/iv_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/header"
+                android:background="@drawable/header2"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
                 app:layout_collapseMode="parallax" />
