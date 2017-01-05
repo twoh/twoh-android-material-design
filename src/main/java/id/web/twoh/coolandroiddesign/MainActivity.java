@@ -5,21 +5,14 @@ import android.content.Intent;
 import android.support.v4.text.util.LinkifyCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
 import android.text.util.Linkify;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-
-import static android.R.attr.button;
 
 public class MainActivity extends BaseAdsActivity {
 
@@ -32,6 +25,7 @@ public class MainActivity extends BaseAdsActivity {
     private Button refreshViewBut;
     private Button btRecyclerView;
     private Button btPallete;
+    private Button btSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +102,15 @@ public class MainActivity extends BaseAdsActivity {
                 startActivity(new Intent(MainActivity.this, PaletteActivity.class));
             }
         });
+
+        btSwitch = (Button) findViewById(R.id.bt_switch);
+        btSwitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SwitchCompatActivity.class));
+            }
+        });
+
         super.onCreate(savedInstanceState);
     }
 

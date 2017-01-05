@@ -90,6 +90,13 @@
             android:layout_margin="4dp"
             android:text="Palette Tutorial" />
 
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/bt_switch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:text="SwitchCompat Tutorial" />
+
     </LinearLayout>
     </ScrollView>
 </LinearLayout>
