@@ -1,78 +1,103 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
 
-    <include layout="@layout/view_toolbar"/>
+    <include layout="@layout/view_toolbar" />
 
-    <LinearLayout
-        android:padding="10dp"
-        android:layout_margin="4dp"
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <TextView
-        android:textColor="@color/twoh_accent"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <android.support.v7.widget.AppCompatButton
-        android:layout_margin="4dp"
-        android:id="@+id/bt_fab"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Floating Action Button"/>
-    <android.support.v7.widget.AppCompatButton
-        android:layout_margin="4dp"
-        android:id="@+id/bt_til"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Text Input Layout"/>
-    <android.support.v7.widget.AppCompatButton
-        android:layout_margin="4dp"
-        android:id="@+id/bt_nav_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Navigation View"/>
-    <android.support.v7.widget.AppCompatButton
-        android:layout_margin="4dp"
-        android:id="@+id/bt_tab"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Tab Layout"/>
-    <android.support.v7.widget.AppCompatButton
-        android:layout_margin="4dp"
-        android:id="@+id/bt_appcontainer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="AppBar &amp; Container Layout"/>
-    <android.support.v7.widget.AppCompatButton
-        android:layout_margin="4dp"
-        android:id="@+id/bt_coll"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Collapsing Toolbar Image"/>
-    <android.support.v7.widget.AppCompatButton
-        android:layout_margin="4dp"
-        android:id="@+id/bt_refreshview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Refresh View"/>
-    <android.support.v7.widget.AppCompatButton
-        android:layout_margin="4dp"
-        android:id="@+id/bt_recview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Recycler View Tutorial"/>
-    <android.support.v7.widget.AppCompatButton
-        android:layout_margin="4dp"
-        android:id="@+id/bt_pallete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Palette Tutorial"/>
+        android:layout_height="wrap_content">
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/hello_world"
+                android:textColor="@color/twoh_accent" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/bt_fab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="Floating Action Button" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/bt_til"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="Text Input Layout" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/bt_nav_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="Navigation View" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/bt_tab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="Tab Layout" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/bt_appcontainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="AppBar &amp; Container Layout" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/bt_coll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="Collapsing Toolbar Image" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/bt_refreshview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="Refresh View" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/bt_recview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="Recycler View Tutorial" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/bt_pallete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="Palette Tutorial" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/bt_ripple"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="Ripple Effect Tutorial" />
+
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

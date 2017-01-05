@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private Button refreshViewBut;
     private Button btRecyclerView;
     private Button btPallete;
+    private Button btRipple;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +97,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, PaletteActivity.class));
+            }
+        });
+
+        btRipple = (Button) findViewById(R.id.bt_ripple);
+        btRipple.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, RippleEffectActivity.class));
             }
         });
     }
