@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btRecyclerView;
     private Button btPallete;
     private Button btRipple;
+    private Button btRatingBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,6 +106,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, RippleEffectActivity.class));
+            }
+        });
+
+        btRatingBar = (Button) findViewById(R.id.bt_ratingbar);
+        btRatingBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, RatingBarActivity.class));
             }
         });
     }
