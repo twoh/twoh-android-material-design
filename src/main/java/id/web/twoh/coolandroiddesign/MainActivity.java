@@ -26,6 +26,8 @@ public class MainActivity extends BaseAdsActivity {
     private Button btRecyclerView;
     private Button btPallete;
     private Button btSwitch;
+    private Button btRipple;
+    private Button btRatingBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,6 +114,22 @@ public class MainActivity extends BaseAdsActivity {
         });
 
         super.onCreate(savedInstanceState);
+
+        btRipple = (Button) findViewById(R.id.bt_ripple);
+        btRipple.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, RippleEffectActivity.class));
+            }
+        });
+
+        btRatingBar = (Button) findViewById(R.id.bt_ratingbar);
+        btRatingBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, RatingBarActivity.class));
+            }
+        });
     }
 
     private void setupToolbar(){

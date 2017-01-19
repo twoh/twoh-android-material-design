@@ -51,6 +51,12 @@
         <activity android:name=".SwitchCompatActivity"
             android:label="@string/app_name"
             />
+        <activity android:name=".RippleEffectActivity"
+            android:label="@string/app_name"
+            />
+        <activity android:name=".RatingBarActivity"
+            android:label="@string/app_name"
+            />
     </application>
 
 </manifest>
