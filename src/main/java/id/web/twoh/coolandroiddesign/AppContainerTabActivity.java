@@ -9,6 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+
+import id.web.twoh.coolandroiddesign.utils.Const;
 
 /**
  * Created by Hafizh Herdi on 7/2/2015 www.twoh.co
@@ -42,12 +45,21 @@ public class AppContainerTabActivity extends BaseAdsActivity {
                 Snackbar.make(findViewById(R.id.coor_Layout), "Contoh sebuah Snackbar", Snackbar.LENGTH_LONG).setAction("Click me!", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+                        decideToDisplay();
                     }
                 }).show();
             }
         });
         super.onCreate(savedInstanceState);
+
+        Button btTutorial = (Button) findViewById(R.id.bt_tutorial);
+        btTutorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                decideToDisplay();
+                readTheTutorial(Const.TUTORIAL_APPBAR);
+            }
+        });
     }
 
     private void setupToolbar(){

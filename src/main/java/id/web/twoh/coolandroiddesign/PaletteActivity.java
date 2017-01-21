@@ -8,7 +8,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+
+import id.web.twoh.coolandroiddesign.utils.Const;
 
 /**
  * Created by Herdi_WORK on 18.09.16.
@@ -30,7 +34,7 @@ public class PaletteActivity extends BaseAdsActivity{
         initViews();
         paintTextBackground();
         setupToolbar();
-
+        decideToDisplay();
     }
 
     private void initViews() {
@@ -40,7 +44,13 @@ public class PaletteActivity extends BaseAdsActivity{
         mutedView = (TextView) findViewById(R.id.tvMuted);
         mutedLightView = (TextView) findViewById(R.id.tvMutedLight);
         mutedDarkView = (TextView) findViewById(R.id.tvMutedDark);
-
+        Button btTutorial = (Button) findViewById(R.id.bt_tutorial);
+        btTutorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                readTheTutorial(Const.TUTORIAL_PALETTE);
+            }
+        });
     }
 
     private void paintTextBackground() {

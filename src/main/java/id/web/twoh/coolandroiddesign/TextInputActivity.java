@@ -5,6 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+
+import id.web.twoh.coolandroiddesign.utils.Const;
 
 /**
  * Created by Hafizh Herdi on 7/9/2015.
@@ -34,6 +38,16 @@ public class TextInputActivity extends BaseAdsActivity {
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         getSupportActionBar().setLogo(R.mipmap.ic_launcher);
         super.onCreate(savedInstanceState);
+
+        Button btTutorial = (Button) findViewById(R.id.bt_tutorial);
+        btTutorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                decideToDisplay();
+                readTheTutorial(Const.TUTORIAL_TIL);
+            }
+        });
+        decideToDisplay();
     }
 
     @Override

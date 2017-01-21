@@ -19,6 +19,10 @@
         ads:adSize="SMART_BANNER"
         ads:adUnitId="@string/banner_ad_unit_id" />
 
+    <include
+        layout="@layout/view_readtutorialbutton"
+        />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

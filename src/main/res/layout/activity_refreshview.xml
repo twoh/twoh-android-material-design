@@ -20,6 +20,10 @@
         ads:adSize="SMART_BANNER"
         ads:adUnitId="@string/banner_ad_unit_id"/>
 
+    <include
+        layout="@layout/view_readtutorialbutton"
+        />
+
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swlayout"
         android:layout_width="match_parent"

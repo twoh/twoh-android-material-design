@@ -4,8 +4,13 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Toast;
+
+import id.web.twoh.coolandroiddesign.utils.Const;
 
 /**
  * Created by Hafizh Herdi on 1/4/2017.
@@ -29,11 +34,22 @@ public class SwitchCompatActivity extends BaseAdsActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 Toast.makeText(SwitchCompatActivity.this,compoundButton.getText()+" is "+compoundButton.isChecked(),Toast.LENGTH_SHORT).show();
+                decideToDisplay();
             }
         };
 
         switchCompat1.setOnCheckedChangeListener(checkedChangeListener);
         switchCompat2.setOnCheckedChangeListener(checkedChangeListener);
+
+        Button btTutorial = (Button) findViewById(R.id.bt_tutorial);
+        btTutorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                decideToDisplay();
+                readTheTutorial(Const.TUTORIAL_SWITCHCOMPAT);
+            }
+        });
+        decideToDisplay();
     }
 
 
@@ -42,7 +58,18 @@ public class SwitchCompatActivity extends BaseAdsActivity {
         setSupportActionBar(toolbar);
         final ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
-        ab.setTitle("TWOH's Switch Button Example");
+        ab.setTitle("Switch Button Example");
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case android.R.id.home :
+                finish();
+                break;
+        }
+
+        return true;
+    }
 }

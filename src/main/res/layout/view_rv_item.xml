@@ -36,7 +36,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_toRightOf="@id/icon"
                 android:ellipsize="marquee"
-                android:singleLine="true"
+                android:maxLines="1"
                 android:text="Description"
                 android:textColor="@color/secondary_text_default_material_light"
                 android:textSize="12sp" />

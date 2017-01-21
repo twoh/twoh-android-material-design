@@ -32,11 +32,13 @@ public class MainActivity extends BaseAdsActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
+        super.onCreate(savedInstanceState);
         setupToolbar();
         btFab = (Button) findViewById(R.id.bt_fab);
         btFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                decideToDisplay();
                 startActivity(new Intent(MainActivity.this, FloatingActionButtonActivity.class));
             }
         });
@@ -45,6 +47,7 @@ public class MainActivity extends BaseAdsActivity {
         btTil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                decideToDisplay();
                 startActivity(new Intent(MainActivity.this, TextInputActivity.class));
             }
         });
@@ -53,6 +56,7 @@ public class MainActivity extends BaseAdsActivity {
         btNav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                decideToDisplay();
                 startActivity(new Intent(MainActivity.this, NavigationViewActivity.class));
             }
         });
@@ -61,6 +65,7 @@ public class MainActivity extends BaseAdsActivity {
         btAppBar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                decideToDisplay();
                 startActivity(new Intent(MainActivity.this, AppContainerTabActivity.class));
             }
         });
@@ -69,6 +74,7 @@ public class MainActivity extends BaseAdsActivity {
         btTab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                decideToDisplay();
                 startActivity(new Intent(MainActivity.this, TabLayoutActivity.class));
             }
         });
@@ -77,6 +83,7 @@ public class MainActivity extends BaseAdsActivity {
         collapseTool.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                decideToDisplay();
                 startActivity(new Intent(MainActivity.this, CollapsingToolbarActivity.class));
             }
         });
@@ -85,6 +92,7 @@ public class MainActivity extends BaseAdsActivity {
         refreshViewBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                decideToDisplay();
                 startActivity(new Intent(MainActivity.this,RefreshViewActivity.class));
             }
         });
@@ -93,6 +101,7 @@ public class MainActivity extends BaseAdsActivity {
         btRecyclerView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                decideToDisplay();
                 startActivity(new Intent(MainActivity.this,RecyclerViewActivity.class));
             }
         });
@@ -101,6 +110,7 @@ public class MainActivity extends BaseAdsActivity {
         btPallete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                decideToDisplay();
                 startActivity(new Intent(MainActivity.this, PaletteActivity.class));
             }
         });
@@ -109,16 +119,16 @@ public class MainActivity extends BaseAdsActivity {
         btSwitch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                decideToDisplay();
                 startActivity(new Intent(MainActivity.this, SwitchCompatActivity.class));
             }
         });
-
-        super.onCreate(savedInstanceState);
 
         btRipple = (Button) findViewById(R.id.bt_ripple);
         btRipple.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                decideToDisplay();
                 startActivity(new Intent(MainActivity.this, RippleEffectActivity.class));
             }
         });
@@ -127,6 +137,7 @@ public class MainActivity extends BaseAdsActivity {
         btRatingBar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                decideToDisplay();
                 startActivity(new Intent(MainActivity.this, RatingBarActivity.class));
             }
         });

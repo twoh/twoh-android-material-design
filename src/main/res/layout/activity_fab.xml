@@ -5,7 +5,6 @@
     android:id="@+id/ly_fab"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_bg_fab"
     tools:context="id.web.twoh.coolandroiddesign.FloatingActionButtonActivity">
 
 
@@ -20,6 +19,14 @@
         android:layout_below="@id/toolbar"
         ads:adSize="SMART_BANNER"
         ads:adUnitId="@string/banner_ad_unit_id"/>
+
+    <include
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/adView"
+        layout="@layout/view_readtutorialbutton"
+        />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

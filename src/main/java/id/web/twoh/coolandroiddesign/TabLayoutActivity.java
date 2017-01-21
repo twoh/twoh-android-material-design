@@ -6,6 +6,10 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+
+import id.web.twoh.coolandroiddesign.utils.Const;
 
 /**
  * Created by Hafizh Herdi on 8/3/2015 www.twoh.co
@@ -31,11 +35,12 @@ public class TabLayoutActivity extends BaseAdsActivity{
         tabLayout.addTab(tabLayout.newTab().setText("Help"));
         tabLayout.addTab(tabLayout.newTab().setText("Friends"));
 
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 tab.getPosition();
                 tab.getText();
+                decideToDisplay();
             }
 
             @Override
@@ -49,6 +54,16 @@ public class TabLayoutActivity extends BaseAdsActivity{
             }
         });
         super.onCreate(savedInstanceState);
+
+        Button btTutorial = (Button) findViewById(R.id.bt_tutorial);
+        btTutorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                decideToDisplay();
+                readTheTutorial(Const.TUTORIAL_TAB);
+            }
+        });
+        decideToDisplay();
     }
 
     private void setupToolbar(){

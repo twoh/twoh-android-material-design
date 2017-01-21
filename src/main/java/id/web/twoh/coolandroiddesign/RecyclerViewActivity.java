@@ -4,15 +4,18 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.Random;
+
+import id.web.twoh.coolandroiddesign.adapter.RecyclerViewAdapter;
+import id.web.twoh.coolandroiddesign.utils.Const;
 
 /**
  * Created by Herdi_WORK on 15.09.16.
@@ -55,6 +58,7 @@ public class RecyclerViewActivity extends BaseAdsActivity {
             @Override
             public void onClick(View view) {
 
+                decideToDisplay();
                 // menyiapkan integer random dari 0 - 9
                 int i = new Random().nextInt(9 - 0 + 1);
 
@@ -72,6 +76,16 @@ public class RecyclerViewActivity extends BaseAdsActivity {
         });
 
         setupToolbar();
+
+        Button btTutorial = (Button) findViewById(R.id.bt_tutorial);
+        btTutorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                decideToDisplay();
+                readTheTutorial(Const.TUTORIAL_RECYCLERVIEW);
+            }
+        });
+        decideToDisplay();
     }
 
     private void initDataset(){

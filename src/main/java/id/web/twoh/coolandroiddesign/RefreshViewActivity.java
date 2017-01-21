@@ -8,8 +8,12 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import id.web.twoh.coolandroiddesign.utils.Const;
 
 /**
  * Created by Hafizh Herdi on 4/17/2016.
@@ -38,12 +42,22 @@ public class RefreshViewActivity extends BaseAdsActivity{
                         llayout.setBackground(ContextCompat.getDrawable(RefreshViewActivity.this, R.drawable.ic_bg_navview));
                         tvHello.setText("www.twoh.co");
                     }
-                }, 5000);
+                }, 3000);
+                decideToDisplay();
             }
         });
 
         setupToolbar();
         super.onCreate(savedInstanceState);
+
+        Button btTutorial = (Button) findViewById(R.id.bt_tutorial);
+        btTutorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                readTheTutorial(Const.TUTORIAL_REFRESH);
+            }
+        });
+        decideToDisplay();
     }
 
     private void setupToolbar(){

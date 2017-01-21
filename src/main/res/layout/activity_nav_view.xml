@@ -1,7 +1,6 @@
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/ic_bg_navview"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -23,6 +22,14 @@
             android:layout_below="@id/toolbar"
             ads:adSize="SMART_BANNER"
             ads:adUnitId="@string/banner_ad_unit_id"/>
+
+        <include
+            android:id="@+id/bt_tutorial"
+            layout="@layout/view_readtutorialbutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/adView"
+            android:layout_margin="10dp" />
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab"
