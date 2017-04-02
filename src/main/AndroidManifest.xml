@@ -57,6 +57,9 @@
         <activity android:name=".RatingBarActivity"
             android:label="@string/app_name"
             />
+        <activity android:name=".BottomNavigationViewActivity"
+            android:label="@string/app_name"
+            />
     </application>
 
 </manifest>

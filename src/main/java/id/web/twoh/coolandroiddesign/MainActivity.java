@@ -28,6 +28,7 @@ public class MainActivity extends BaseAdsActivity {
     private Button btSwitch;
     private Button btRipple;
     private Button btRatingBar;
+    private Button btNavBottom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -139,6 +140,15 @@ public class MainActivity extends BaseAdsActivity {
             public void onClick(View view) {
                 decideToDisplay();
                 startActivity(new Intent(MainActivity.this, RatingBarActivity.class));
+            }
+        });
+
+        btNavBottom = (Button) findViewById(R.id.bt_bottomnav);
+        btNavBottom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                decideToDisplay();
+                startActivity(new Intent(MainActivity.this, BottomNavigationViewActivity.class));
             }
         });
     }
