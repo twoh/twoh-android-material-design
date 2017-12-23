@@ -1,16 +1,20 @@
 package id.web.twoh.coolandroiddesign;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v4.text.util.LinkifyCompat;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AlertDialog;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.SpannableString;
+import android.text.util.Linkify;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseAdsActivity {
 
     private Button btFab;
     private Button btTil;
@@ -21,18 +25,21 @@ public class MainActivity extends AppCompatActivity {
     private Button refreshViewBut;
     private Button btRecyclerView;
     private Button btPallete;
+    private Button btSwitch;
     private Button btRipple;
     private Button btRatingBar;
+    private Button btNavBottom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        super.onCreate(savedInstanceState);
         setupToolbar();
         btFab = (Button) findViewById(R.id.bt_fab);
         btFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                decideToDisplay();
                 startActivity(new Intent(MainActivity.this, FloatingActionButtonActivity.class));
             }
         });
@@ -41,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         btTil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                decideToDisplay();
                 startActivity(new Intent(MainActivity.this, TextInputActivity.class));
             }
         });
@@ -49,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         btNav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                decideToDisplay();
                 startActivity(new Intent(MainActivity.this, NavigationViewActivity.class));
             }
         });
@@ -57,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         btAppBar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                decideToDisplay();
                 startActivity(new Intent(MainActivity.this, AppContainerTabActivity.class));
             }
         });
@@ -65,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         btTab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                decideToDisplay();
                 startActivity(new Intent(MainActivity.this, TabLayoutActivity.class));
             }
         });
@@ -73,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         collapseTool.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                decideToDisplay();
                 startActivity(new Intent(MainActivity.this, CollapsingToolbarActivity.class));
             }
         });
@@ -81,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         refreshViewBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                decideToDisplay();
                 startActivity(new Intent(MainActivity.this,RefreshViewActivity.class));
             }
         });
@@ -89,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
         btRecyclerView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                decideToDisplay();
                 startActivity(new Intent(MainActivity.this,RecyclerViewActivity.class));
             }
         });
@@ -97,7 +111,17 @@ public class MainActivity extends AppCompatActivity {
         btPallete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                decideToDisplay();
                 startActivity(new Intent(MainActivity.this, PaletteActivity.class));
+            }
+        });
+
+        btSwitch = (Button) findViewById(R.id.bt_switch);
+        btSwitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                decideToDisplay();
+                startActivity(new Intent(MainActivity.this, SwitchCompatActivity.class));
             }
         });
 
@@ -105,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
         btRipple.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                decideToDisplay();
                 startActivity(new Intent(MainActivity.this, RippleEffectActivity.class));
             }
         });
@@ -113,7 +138,17 @@ public class MainActivity extends AppCompatActivity {
         btRatingBar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                decideToDisplay();
                 startActivity(new Intent(MainActivity.this, RatingBarActivity.class));
+            }
+        });
+
+        btNavBottom = (Button) findViewById(R.id.bt_bottomnav);
+        btNavBottom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                decideToDisplay();
+                startActivity(new Intent(MainActivity.this, BottomNavigationViewActivity.class));
             }
         });
     }
@@ -122,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         final ActionBar ab = getSupportActionBar();
-        ab.setHomeAsUpIndicator(R.drawable.ic_menu);
+        ab.setHomeAsUpIndicator(R.mipmap.ic_launcher);
         ab.setDisplayHomeAsUpEnabled(true);
     }
 
@@ -142,9 +177,30 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            open();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void open(){
+
+
+        SpannableString str = new SpannableString("Copyright © : TWOh's Engineering " +
+                "\nTutorial lengkap di http://www.twoh.co/mudengdroid-belajar-android-bersama-twohs-engineering/android-design-tutorial/");
+        LinkifyCompat.addLinks(str, Linkify.WEB_URLS);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setMessage(str);
+                alertDialogBuilder.setPositiveButton("OK",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface arg0, int arg1) {
+                                arg0.dismiss();
+                            }
+                        });
+
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
     }
 }

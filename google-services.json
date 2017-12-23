@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "150919938839",
+    "firebase_url": "https://geldmoschinio.firebaseio.com",
+    "project_id": "geldmoschinio",
+    "storage_bucket": "geldmoschinio.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:150919938839:android:84b76e6edbe0a19b",
+        "android_client_info": {
+          "package_name": "id.web.twoh.coolandroiddesign"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "150919938839-oo8lebq3rd998heirc1boom3e3c134pr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZmQ69k-MV8MRVJXUsLlUv8r8Tsnyer-0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

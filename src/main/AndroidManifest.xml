@@ -2,7 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="id.web.twoh.coolandroiddesign" >
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <application
+        android:name=".application.TWOHsApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -43,10 +48,16 @@
         <activity android:name=".PaletteActivity"
             android:label="@string/app_name"
             />
+        <activity android:name=".SwitchCompatActivity"
+            android:label="@string/app_name"
+            />
         <activity android:name=".RippleEffectActivity"
             android:label="@string/app_name"
             />
         <activity android:name=".RatingBarActivity"
+            android:label="@string/app_name"
+            />
+        <activity android:name=".BottomNavigationViewActivity"
             android:label="@string/app_name"
             />
     </application>

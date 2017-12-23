@@ -3,15 +3,21 @@ package id.web.twoh.coolandroiddesign;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+
+import id.web.twoh.coolandroiddesign.utils.Const;
 
 /**
  * Created by Herdi_WORK on 18.09.16.
  */
-public class PaletteActivity extends AppCompatActivity{
+public class PaletteActivity extends BaseAdsActivity{
 
     private TextView vibrantView;
     private TextView vibrantLightView;
@@ -22,18 +28,13 @@ public class PaletteActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pallete);
 
+        setContentView(R.layout.activity_pallete);
+        super.onCreate(savedInstanceState);
         initViews();
         paintTextBackground();
-        setToolbar();
-
-    }
-
-    private void setToolbar(){
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("TWOH's Palette Tutorial");
+        setupToolbar();
+        decideToDisplay();
     }
 
     private void initViews() {
@@ -43,12 +44,18 @@ public class PaletteActivity extends AppCompatActivity{
         mutedView = (TextView) findViewById(R.id.tvMuted);
         mutedLightView = (TextView) findViewById(R.id.tvMutedLight);
         mutedDarkView = (TextView) findViewById(R.id.tvMutedDark);
-
+        Button btTutorial = (Button) findViewById(R.id.bt_tutorial);
+        btTutorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                readTheTutorial(Const.TUTORIAL_PALETTE);
+            }
+        });
     }
 
     private void paintTextBackground() {
 
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.lena);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.face2);
 
         Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
             @Override
@@ -72,5 +79,25 @@ public class PaletteActivity extends AppCompatActivity{
         });
 
 
+    }
+
+    private void setupToolbar(){
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        final ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
+        ab.setTitle("TWOH's Palette View Example");
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case android.R.id.home :
+                finish();
+                break;
+        }
+
+        return true;
     }
 }

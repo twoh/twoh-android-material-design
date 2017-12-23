@@ -3,18 +3,24 @@ package id.web.twoh.coolandroiddesign;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.ActionBar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.Random;
 
+import id.web.twoh.coolandroiddesign.adapter.RecyclerViewAdapter;
+import id.web.twoh.coolandroiddesign.utils.Const;
+
 /**
  * Created by Herdi_WORK on 15.09.16.
  */
-public class RecyclerViewActivity extends AppCompatActivity {
+public class RecyclerViewActivity extends BaseAdsActivity {
 
     private RecyclerView rvView;
     private RecyclerView.Adapter adapter;
@@ -25,8 +31,9 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_recyclerview);
+        super.onCreate(savedInstanceState);
         dataSet = new ArrayList<>();
         addDataSet = new ArrayList<>();
 
@@ -51,6 +58,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                decideToDisplay();
                 // menyiapkan integer random dari 0 - 9
                 int i = new Random().nextInt(9 - 0 + 1);
 
@@ -66,6 +74,18 @@ public class RecyclerViewActivity extends AppCompatActivity {
                 rvView.scrollToPosition(dataSet.size()-1);
             }
         });
+
+        setupToolbar();
+
+        Button btTutorial = (Button) findViewById(R.id.bt_tutorial);
+        btTutorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                decideToDisplay();
+                readTheTutorial(Const.TUTORIAL_RECYCLERVIEW);
+            }
+        });
+        decideToDisplay();
     }
 
     private void initDataset(){
@@ -96,5 +116,25 @@ public class RecyclerViewActivity extends AppCompatActivity {
         addDataSet.add("Katrin");
         addDataSet.add("Katharina");
         addDataSet.add("Liselotte");
+    }
+
+    private void setupToolbar(){
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        final ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
+        ab.setTitle("Recycler View Example");
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case android.R.id.home :
+                finish();
+                break;
+        }
+
+        return true;
     }
 }

@@ -7,19 +7,23 @@ import android.support.design.widget.TabLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+
+import id.web.twoh.coolandroiddesign.utils.Const;
 
 /**
  * Created by Hafizh Herdi on 7/2/2015 www.twoh.co
  */
-public class AppContainerTabActivity extends AppCompatActivity {
+public class AppContainerTabActivity extends BaseAdsActivity {
 
     private TabLayout tabLayout;
     private FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_container_ly);
 
         setupToolbar();
@@ -41,9 +45,19 @@ public class AppContainerTabActivity extends AppCompatActivity {
                 Snackbar.make(findViewById(R.id.coor_Layout), "Contoh sebuah Snackbar", Snackbar.LENGTH_LONG).setAction("Click me!", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+                        decideToDisplay();
                     }
                 }).show();
+            }
+        });
+        super.onCreate(savedInstanceState);
+
+        Button btTutorial = (Button) findViewById(R.id.bt_tutorial);
+        btTutorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                decideToDisplay();
+                readTheTutorial(Const.TUTORIAL_APPBAR);
             }
         });
     }
@@ -52,8 +66,20 @@ public class AppContainerTabActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         final ActionBar ab = getSupportActionBar();
-        ab.setHomeAsUpIndicator(R.drawable.ic_menu);
         ab.setDisplayHomeAsUpEnabled(true);
+        ab.setTitle("AppBar & Container Layout Example");
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case android.R.id.home :
+                finish();
+                break;
+        }
+
+        return true;
     }
 
 }
