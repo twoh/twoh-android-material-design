@@ -3,17 +3,24 @@ package id.web.twoh.coolandroiddesign;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
+
+import id.web.twoh.coolandroiddesign.utils.Const;
 
 /**
  * Created by Hafizh Herdi on 3/5/2017.
  */
 
-public class BottomNavigationViewActivity extends AppCompatActivity {
+    public class BottomNavigationViewActivity extends BaseAdsActivity {
 
     private BottomNavigationView bottomNavigationView;
+    private Button btTutorial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +47,36 @@ public class BottomNavigationViewActivity extends AppCompatActivity {
             }
         });
 
+        btTutorial = (Button) findViewById(R.id.bt_tutorial);
+        btTutorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                readTheTutorial(Const.TUTORIAL_BOTTOMNAVVIEW);
+            }
+        });
+
+        setupToolbar();
         super.onCreate(savedInstanceState);
     }
 
+    private void setupToolbar(){
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        final ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
+        ab.setTitle("Floating Action Button Example");
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case android.R.id.home :
+                finish();
+                break;
+        }
+
+        return true;
+    }
 }
