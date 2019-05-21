@@ -2,12 +2,12 @@
 <resources>
     <color name="window_background">#CCffffff</color>
 
-    <color name="twoh_primary">#F44336</color>
-    <color name="twoh_primary_dark">#D32F2F</color>
-    <color name="twoh_primary_light">#FFCDD2</color>
-    <color name="twoh_accent">#009688</color>
+    <color name="twoh_primary">#2196F3</color>
+    <color name="twoh_primary_dark">#1976D2</color>
+    <color name="twoh_primary_light">#BBDEFB</color>
+    <color name="twoh_accent">#FF9800</color>
     <color name="twoh_primary_text">#212121</color>
-    <color name="twoh_secondary_text">#727272</color>
+    <color name="twoh_secondary_text">#757575</color>
     <color name="twoh_icons">#FFFFFF</color>
-    <color name="twoh_divider">#B6B6B6</color>
+    <color name="twoh_divider">#BDBDBD</color>
 </resources>
