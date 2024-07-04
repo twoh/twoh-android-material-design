@@ -1,15 +1,16 @@
 package id.web.twoh.coolandroiddesign;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
+import androidx.appcompat.app.ActionBar;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import id.web.twoh.coolandroiddesign.utils.Const;
 
@@ -26,7 +27,7 @@ import id.web.twoh.coolandroiddesign.utils.Const;
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_bottom_nav_view);
 
-        bottomNavigationView = (BottomNavigationView) findViewById(R.id.btm_nav);
+        bottomNavigationView = findViewById(R.id.btm_nav);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -60,7 +61,7 @@ import id.web.twoh.coolandroiddesign.utils.Const;
     }
 
     private void setupToolbar(){
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         final ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);

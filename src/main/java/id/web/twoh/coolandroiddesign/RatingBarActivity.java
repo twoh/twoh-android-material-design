@@ -1,17 +1,15 @@
 package id.web.twoh.coolandroiddesign;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.AppCompatRatingBar;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
-import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatRatingBar;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.Toolbar;
 
 import id.web.twoh.coolandroiddesign.utils.Const;
 
@@ -29,42 +27,31 @@ public class RatingBarActivity extends BaseAdsActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         setContentView(R.layout.activity_rating_bar);
 
-        ratingBar = (AppCompatRatingBar) findViewById(R.id.rt_bar);
-        btRating = (Button) findViewById(R.id.bt_submit);
-        tvRating = (TextView) findViewById(R.id.tv_rate);
+        ratingBar =findViewById(R.id.rt_bar);
+        btRating = findViewById(R.id.bt_submit);
+        tvRating = findViewById(R.id.tv_rate);
 
-        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-            @Override
-            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                tvRating.setText("Rate : "+rating);
-            }
-        });
+        ratingBar.setOnRatingBarChangeListener((ratingBar, rating, fromUser) -> tvRating.setText("Rate : "+rating));
 
-        btRating.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(RatingBarActivity.this," Rating "+ratingBar.getRating(), Toast.LENGTH_SHORT).show();
-                decideToDisplay();
-            }
+        btRating.setOnClickListener(v -> {
+            Toast.makeText(RatingBarActivity.this," Rating "+ratingBar.getRating(), Toast.LENGTH_SHORT).show();
+            decideToDisplay();
         });
 
         super.onCreate(savedInstanceState);
 
         setToolbar();
 
-        Button btTutorial = (Button) findViewById(R.id.bt_tutorial);
-        btTutorial.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                decideToDisplay();
-                readTheTutorial(Const.TUTORIAL_RATINGBAR);
-            }
+        Button btTutorial = findViewById(R.id.bt_tutorial);
+        btTutorial.setOnClickListener(v -> {
+            decideToDisplay();
+            readTheTutorial(Const.TUTORIAL_RATINGBAR);
         });
         decideToDisplay();
     }
 
     private void setToolbar(){
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         final ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);

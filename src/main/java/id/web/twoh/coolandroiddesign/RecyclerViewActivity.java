@@ -1,15 +1,16 @@
 package id.web.twoh.coolandroiddesign;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.ActionBar;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.Toolbar;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -54,36 +55,30 @@ public class RecyclerViewActivity extends BaseAdsActivity {
         rvView.setAdapter(adapter);
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        fab.setOnClickListener(view -> {
 
-                decideToDisplay();
-                // menyiapkan integer random dari 0 - 9
-                int i = new Random().nextInt(9 - 0 + 1);
+            decideToDisplay();
+            // menyiapkan integer random dari 0 - 9
+            int i = new Random().nextInt(9 - 0 + 1);
 
-                // mengambil nama pada posisi random 0 - 9
-                String additional = addDataSet.get(i);
+            // mengambil nama pada posisi random 0 - 9
+            String additional = addDataSet.get(i);
 
-                // memasukkan nama tersebut ke dalam
-                // daftar nama di RecyclerView
-                ((RecyclerViewAdapter)adapter).add(dataSet.size(), additional);
+            // memasukkan nama tersebut ke dalam
+            // daftar nama di RecyclerView
+            ((RecyclerViewAdapter)adapter).add(dataSet.size(), additional);
 
-                // membuat RecyclerView otomatis
-                // scroll ke bawah setelah nama baru ditambahkan
-                rvView.scrollToPosition(dataSet.size()-1);
-            }
+            // membuat RecyclerView otomatis
+            // scroll ke bawah setelah nama baru ditambahkan
+            rvView.scrollToPosition(dataSet.size()-1);
         });
 
         setupToolbar();
 
-        Button btTutorial = (Button) findViewById(R.id.bt_tutorial);
-        btTutorial.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                decideToDisplay();
-                readTheTutorial(Const.TUTORIAL_RECYCLERVIEW);
-            }
+        Button btTutorial =  findViewById(R.id.bt_tutorial);
+        btTutorial.setOnClickListener(v -> {
+            decideToDisplay();
+            readTheTutorial(Const.TUTORIAL_RECYCLERVIEW);
         });
         decideToDisplay();
     }

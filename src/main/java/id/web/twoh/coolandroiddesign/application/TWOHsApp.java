@@ -13,6 +13,6 @@ public class TWOHsApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        MobileAds.initialize(this, "ca-app-pub-6916955256570875~9533087755");
+        MobileAds.initialize(this);
     }
 }

@@ -1,15 +1,16 @@
 package id.web.twoh.coolandroiddesign;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.design.widget.TabLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.tabs.TabLayout;
 
 import id.web.twoh.coolandroiddesign.utils.Const;
 
@@ -28,7 +29,7 @@ public class AppContainerTabActivity extends BaseAdsActivity {
 
         setupToolbar();
 
-        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        tabLayout = findViewById(R.id.tabLayout);
         tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER);
         tabLayout.addTab(tabLayout.newTab().setText("Home"));
         tabLayout.addTab(tabLayout.newTab().setText("Profile"));
@@ -38,7 +39,7 @@ public class AppContainerTabActivity extends BaseAdsActivity {
         tabLayout.addTab(tabLayout.newTab().setText("Help"));
         tabLayout.addTab(tabLayout.newTab().setText("Friends"));
 
-        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,7 +64,7 @@ public class AppContainerTabActivity extends BaseAdsActivity {
     }
 
     private void setupToolbar(){
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         final ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);

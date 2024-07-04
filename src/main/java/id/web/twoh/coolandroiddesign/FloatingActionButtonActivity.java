@@ -1,14 +1,15 @@
 package id.web.twoh.coolandroiddesign;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import id.web.twoh.coolandroiddesign.utils.Const;
 
@@ -24,7 +25,7 @@ public class FloatingActionButtonActivity extends BaseAdsActivity{
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_fab);
 
-        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,20 +38,15 @@ public class FloatingActionButtonActivity extends BaseAdsActivity{
             }
         });
 
-        btTutorial = (Button) findViewById(R.id.bt_tutorial);
-        btTutorial.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                readTheTutorial(Const.TUTORIAL_FAB);
-            }
-        });
+        btTutorial = findViewById(R.id.bt_tutorial);
+        btTutorial.setOnClickListener(v -> readTheTutorial(Const.TUTORIAL_FAB));
 
         setupToolbar();
         super.onCreate(savedInstanceState);
     }
 
     private void setupToolbar(){
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         final ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);

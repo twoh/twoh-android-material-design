@@ -3,15 +3,14 @@ package id.web.twoh.coolandroiddesign;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.graphics.Palette;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.palette.graphics.Palette;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.Toolbar;
 import id.web.twoh.coolandroiddesign.utils.Const;
 
 /**
@@ -57,32 +56,29 @@ public class PaletteActivity extends BaseAdsActivity{
 
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.face2);
 
-        Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
-            @Override
-            public void onGenerated(Palette palette) {
-                // ambil warna dari gambar menggunakan Palette
-                int defaultValue = 0x000000;
-                int vibrant = palette.getVibrantColor(defaultValue);
-                int vibrantLight = palette.getLightVibrantColor(defaultValue);
-                int vibrantDark = palette.getDarkVibrantColor(defaultValue);
-                int muted = palette.getMutedColor(defaultValue);
-                int mutedLight = palette.getLightMutedColor(defaultValue);
-                int mutedDark = palette.getDarkMutedColor(defaultValue);
+        Palette.from(bitmap).generate(palette -> {
+            // ambil warna dari gambar menggunakan Palette
+            int defaultValue = 0x000000;
+            int vibrant = palette.getVibrantColor(defaultValue);
+            int vibrantLight = palette.getLightVibrantColor(defaultValue);
+            int vibrantDark = palette.getDarkVibrantColor(defaultValue);
+            int muted = palette.getMutedColor(defaultValue);
+            int mutedLight = palette.getLightMutedColor(defaultValue);
+            int mutedDark = palette.getDarkMutedColor(defaultValue);
 
-                vibrantView.setBackgroundColor(vibrant);
-                vibrantLightView.setBackgroundColor(vibrantLight);
-                vibrantDarkView.setBackgroundColor(vibrantDark);
-                mutedView.setBackgroundColor(muted);
-                mutedLightView.setBackgroundColor(mutedLight);
-                mutedDarkView.setBackgroundColor(mutedDark);
-            }
+            vibrantView.setBackgroundColor(vibrant);
+            vibrantLightView.setBackgroundColor(vibrantLight);
+            vibrantDarkView.setBackgroundColor(vibrantDark);
+            mutedView.setBackgroundColor(muted);
+            mutedLightView.setBackgroundColor(mutedLight);
+            mutedDarkView.setBackgroundColor(mutedDark);
         });
 
 
     }
 
     private void setupToolbar(){
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         final ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);

@@ -1,15 +1,16 @@
 package id.web.twoh.coolandroiddesign;
 
 import android.os.Bundle;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.navigation.NavigationView;
 
 import id.web.twoh.coolandroiddesign.utils.Const;
 
@@ -25,41 +26,38 @@ public class NavigationViewActivity extends BaseAdsActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_nav_view);
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawerLayout = findViewById(R.id.drawer_layout);
         setupToolbar();
-        navView = (NavigationView) findViewById(R.id.navigation);
-        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(MenuItem menuItem) {
-                if(menuItem.isChecked())
-                    menuItem.setChecked(false);
-                else
-                    menuItem.setChecked(true);
+        navView = findViewById(R.id.navigation);
+        navView.setNavigationItemSelectedListener(menuItem -> {
+            if(menuItem.isChecked())
+                menuItem.setChecked(false);
+            else
+                menuItem.setChecked(true);
 
-                drawerLayout.closeDrawers();
+            drawerLayout.closeDrawers();
 
-                switch (menuItem.getItemId()){
+            switch (menuItem.getItemId()){
 
-                    case R.id.nav_home:
-                        decideToDisplay();
-                        Toast.makeText(NavigationViewActivity.this, "Home clicked", Toast.LENGTH_SHORT).show();
-                        return true;
-                    case R.id.nav_my_profile:
-                        decideToDisplay();
-                        Toast.makeText(NavigationViewActivity.this, "My profile clicked", Toast.LENGTH_SHORT).show();
-                        return true;
-                    case R.id.nav_settings:
-                        decideToDisplay();
-                        Toast.makeText(NavigationViewActivity.this, "Settings clicked", Toast.LENGTH_SHORT).show();
-                        return true;
+                case R.id.nav_home:
+                    decideToDisplay();
+                    Toast.makeText(NavigationViewActivity.this, "Home clicked", Toast.LENGTH_SHORT).show();
+                    return true;
+                case R.id.nav_my_profile:
+                    decideToDisplay();
+                    Toast.makeText(NavigationViewActivity.this, "My profile clicked", Toast.LENGTH_SHORT).show();
+                    return true;
+                case R.id.nav_settings:
+                    decideToDisplay();
+                    Toast.makeText(NavigationViewActivity.this, "Settings clicked", Toast.LENGTH_SHORT).show();
+                    return true;
 
-                }
-                return true;
             }
+            return true;
         });
         super.onCreate(savedInstanceState);
 
-        Button btTutorial = (Button) findViewById(R.id.bt_tutorial);
+        Button btTutorial = findViewById(R.id.bt_tutorial);
         btTutorial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,7 +79,7 @@ public class NavigationViewActivity extends BaseAdsActivity {
 
     private void setupToolbar()
     {
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
 
         // set toolbar ke dalam support action bar
         setSupportActionBar(toolbar);

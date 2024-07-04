@@ -1,12 +1,12 @@
 package id.web.twoh.coolandroiddesign;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.widget.Toolbar;
 
 import id.web.twoh.coolandroiddesign.utils.Const;
 
@@ -20,7 +20,7 @@ public class TextInputActivity extends BaseAdsActivity {
         setContentView(R.layout.activity_textinput);
 
         // findview toolbar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
 
         // set toolbar ke dalam support action bar
         setSupportActionBar(toolbar);
@@ -39,13 +39,10 @@ public class TextInputActivity extends BaseAdsActivity {
         getSupportActionBar().setLogo(R.mipmap.ic_launcher);
         super.onCreate(savedInstanceState);
 
-        Button btTutorial = (Button) findViewById(R.id.bt_tutorial);
-        btTutorial.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                decideToDisplay();
-                readTheTutorial(Const.TUTORIAL_TIL);
-            }
+        Button btTutorial = findViewById(R.id.bt_tutorial);
+        btTutorial.setOnClickListener(v -> {
+            decideToDisplay();
+            readTheTutorial(Const.TUTORIAL_TIL);
         });
         decideToDisplay();
     }

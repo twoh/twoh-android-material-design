@@ -1,14 +1,15 @@
 package id.web.twoh.coolandroiddesign;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.widget.SwitchCompat;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Toast;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.SwitchCompat;
+import androidx.appcompat.widget.Toolbar;
 
 import id.web.twoh.coolandroiddesign.utils.Const;
 
@@ -25,8 +26,8 @@ public class SwitchCompatActivity extends BaseAdsActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_switch_view);
-        switchCompat1 = (SwitchCompat) findViewById(R.id.sw_button);
-        switchCompat2 = (SwitchCompat) findViewById(R.id.sw_button2);
+        switchCompat1 = findViewById(R.id.sw_button);
+        switchCompat2 = findViewById(R.id.sw_button2);
         super.onCreate(savedInstanceState);
         setupToolbar();
 
@@ -41,20 +42,17 @@ public class SwitchCompatActivity extends BaseAdsActivity {
         switchCompat1.setOnCheckedChangeListener(checkedChangeListener);
         switchCompat2.setOnCheckedChangeListener(checkedChangeListener);
 
-        Button btTutorial = (Button) findViewById(R.id.bt_tutorial);
-        btTutorial.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                decideToDisplay();
-                readTheTutorial(Const.TUTORIAL_SWITCHCOMPAT);
-            }
+        Button btTutorial = findViewById(R.id.bt_tutorial);
+        btTutorial.setOnClickListener(v -> {
+            decideToDisplay();
+            readTheTutorial(Const.TUTORIAL_SWITCHCOMPAT);
         });
         decideToDisplay();
     }
 
 
     private void setupToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         final ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);

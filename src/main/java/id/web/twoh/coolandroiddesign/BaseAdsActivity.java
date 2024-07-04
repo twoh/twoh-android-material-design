@@ -3,14 +3,22 @@ package id.web.twoh.coolandroiddesign;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.customtabs.CustomTabsIntent;
-import android.support.v7.app.AppCompatActivity;
+
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.browser.customtabs.CustomTabsIntent;
+
+import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
+
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 /**
@@ -23,14 +31,16 @@ public class BaseAdsActivity extends AppCompatActivity {
     private InterstitialAd interstitialAd;
     private static final String TAG = BaseAdsActivity.class.getSimpleName();
     private int counter = 0;
+    private AdRequest adRequest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
-        AdView mAdView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice("22FFB74E3E00DEC909938864EE0B401E").build();
+        AdView mAdView = findViewById(R.id.adView);
+        adRequest = new AdRequest.Builder().build();
+                //addTestDevice("22FFB74E3E00DEC909938864EE0B401E").build();
         mAdView.loadAd(adRequest);
 
         System.out.println("Outer class "+this.getClass().getSimpleName());
@@ -40,22 +50,26 @@ public class BaseAdsActivity extends AppCompatActivity {
         bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "activity");
         mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.VIEW_ITEM, bundle);
 
+
         initInterstitial();
 
     }
 
     protected void initInterstitial(){
-        interstitialAd = new InterstitialAd(this);
-        interstitialAd.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
-
-        interstitialAd.setAdListener(new AdListener() {
+        InterstitialAd.load(this, getString(R.string.interstitial_ad_unit_id), adRequest, new InterstitialAdLoadCallback() {
             @Override
-            public void onAdClosed() {
+            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                super.onAdFailedToLoad(loadAdError);
+                interstitialAd = null;
+            }
+
+            @Override
+            public void onAdLoaded(@NonNull InterstitialAd interstitialAdLoaded) {
+                super.onAdLoaded(interstitialAdLoaded);
+                interstitialAd = interstitialAdLoaded;
                 loadInterstitial();
             }
         });
-
-        loadInterstitial();
     }
 
     protected void readTheTutorial(String url){
@@ -67,8 +81,8 @@ public class BaseAdsActivity extends AppCompatActivity {
     }
 
     protected void displayInterstitial() {
-        if (interstitialAd != null && interstitialAd.isLoaded()) {
-            interstitialAd.show();
+        if (interstitialAd!=null) {
+            interstitialAd.show(BaseAdsActivity.this);
         } else {
             loadInterstitial();
         }
@@ -86,10 +100,38 @@ public class BaseAdsActivity extends AppCompatActivity {
     }
 
     private void loadInterstitial() {
+        if (interstitialAd !=null) {
 
-        if (!interstitialAd.isLoading() && !interstitialAd.isLoaded()) {
-            AdRequest adRequest = new AdRequest.Builder().build();
-            interstitialAd.loadAd(adRequest);
+            interstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                @Override
+                public void onAdClicked() {
+                    super.onAdClicked();
+                }
+
+                @Override
+                public void onAdDismissedFullScreenContent() {
+                    super.onAdDismissedFullScreenContent();
+                    interstitialAd = null;
+                }
+
+                @Override
+                public void onAdFailedToShowFullScreenContent(@NonNull AdError adError) {
+                    super.onAdFailedToShowFullScreenContent(adError);
+                    interstitialAd = null;
+                }
+
+                @Override
+                public void onAdImpression() {
+                    super.onAdImpression();
+                }
+
+                @Override
+                public void onAdShowedFullScreenContent() {
+                    super.onAdShowedFullScreenContent();
+                }
+            });
+
+            interstitialAd.show(BaseAdsActivity.this);
         }
     }
 }

@@ -1,13 +1,14 @@
 package id.web.twoh.coolandroiddesign;
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.tabs.TabLayout;
 
 import id.web.twoh.coolandroiddesign.utils.Const;
 
@@ -25,7 +26,7 @@ public class TabLayoutActivity extends BaseAdsActivity{
 
         setupToolbar();
 
-        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        tabLayout = findViewById(R.id.tabLayout);
         tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER);
         tabLayout.addTab(tabLayout.newTab().setText("Home"));
         tabLayout.addTab(tabLayout.newTab().setText("Profile"));
@@ -55,19 +56,16 @@ public class TabLayoutActivity extends BaseAdsActivity{
         });
         super.onCreate(savedInstanceState);
 
-        Button btTutorial = (Button) findViewById(R.id.bt_tutorial);
-        btTutorial.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                decideToDisplay();
-                readTheTutorial(Const.TUTORIAL_TAB);
-            }
+        Button btTutorial = findViewById(R.id.bt_tutorial);
+        btTutorial.setOnClickListener(v -> {
+            decideToDisplay();
+            readTheTutorial(Const.TUTORIAL_TAB);
         });
         decideToDisplay();
     }
 
     private void setupToolbar(){
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         final ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);

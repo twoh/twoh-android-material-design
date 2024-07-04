@@ -2,17 +2,18 @@ package id.web.twoh.coolandroiddesign;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v4.text.util.LinkifyCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.text.SpannableString;
 import android.text.util.Linkify;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.text.util.LinkifyCompat;
 
 public class MainActivity extends BaseAdsActivity {
 

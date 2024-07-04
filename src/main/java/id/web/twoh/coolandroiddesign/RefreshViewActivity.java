@@ -2,16 +2,15 @@ package id.web.twoh.coolandroiddesign;
 
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.Toolbar;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import id.web.twoh.coolandroiddesign.utils.Const;
 
@@ -28,9 +27,9 @@ public class RefreshViewActivity extends BaseAdsActivity{
     public void onCreate(Bundle savedInstanceState) {
 
         setContentView(R.layout.activity_refreshview);
-        swLayout = (SwipeRefreshLayout) findViewById(R.id.swlayout);
-        llayout = (LinearLayout) findViewById(R.id.ll_swiperefresh);
-        tvHello = (TextView) findViewById(R.id.tv_helloworld);
+        swLayout = findViewById(R.id.swlayout);
+        llayout = findViewById(R.id.ll_swiperefresh);
+        tvHello = findViewById(R.id.tv_helloworld);
 
         swLayout.setColorSchemeResources(R.color.twoh_accent,R.color.twoh_primary);
         swLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -50,13 +49,8 @@ public class RefreshViewActivity extends BaseAdsActivity{
         setupToolbar();
         super.onCreate(savedInstanceState);
 
-        Button btTutorial = (Button) findViewById(R.id.bt_tutorial);
-        btTutorial.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                readTheTutorial(Const.TUTORIAL_REFRESH);
-            }
-        });
+        Button btTutorial = findViewById(R.id.bt_tutorial);
+        btTutorial.setOnClickListener(v -> readTheTutorial(Const.TUTORIAL_REFRESH));
         decideToDisplay();
     }
 
