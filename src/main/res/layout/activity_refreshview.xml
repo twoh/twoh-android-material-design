@@ -12,14 +12,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true" />
 
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        ads:adSize="SMART_BANNER"
-        ads:adUnitId="@string/banner_ad_unit_id"/>
-
     <include
         layout="@layout/view_tutorial_instruction"
         />

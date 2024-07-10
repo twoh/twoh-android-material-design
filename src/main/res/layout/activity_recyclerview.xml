@@ -13,20 +13,11 @@
         android:layout_height="wrap_content"
         layout="@layout/view_toolbar" />
 
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar"
-        ads:adSize="SMART_BANNER"
-        ads:adUnitId="@string/banner_ad_unit_id"/>
-
     <include
         android:id="@+id/bt_tutorial"
         layout="@layout/view_readtutorialbutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/adView"
         android:layout_margin="10dp" />
 
     <androidx.recyclerview.widget.RecyclerView
