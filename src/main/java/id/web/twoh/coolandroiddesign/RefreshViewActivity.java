@@ -38,7 +38,7 @@ public class RefreshViewActivity extends BaseAdsActivity{
                 new Handler().postDelayed(new Runnable() {
                     @Override public void run() {
                         swLayout.setRefreshing(false);
-                        llayout.setBackground(ContextCompat.getDrawable(RefreshViewActivity.this, R.drawable.ic_bg_navview));
+                        llayout.setBackground(ContextCompat.getDrawable(RefreshViewActivity.this, R.drawable.bg_navview));
                         tvHello.setText("www.twoh.co");
                     }
                 }, 3000);

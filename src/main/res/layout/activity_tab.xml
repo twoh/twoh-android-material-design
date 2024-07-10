@@ -30,11 +30,19 @@
         ads:adUnitId="@string/banner_ad_unit_id"/>
 
     <include
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/adView"
+        layout="@layout/view_tutorial_instruction"
+        />
+
+    <include
         android:id="@+id/bt_tutorial"
         layout="@layout/view_readtutorialbutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/adView"
+        android:layout_below="@id/tv_tutorial_instruction"
         android:layout_margin="10dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

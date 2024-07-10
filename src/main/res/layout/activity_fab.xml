@@ -25,6 +25,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/adView"
+        layout="@layout/view_tutorial_instruction"
+        />
+
+    <include
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_tutorial_instruction"
         layout="@layout/view_readtutorialbutton"
         />
 

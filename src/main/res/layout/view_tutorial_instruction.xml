@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_tutorial_instruction"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/cardview_dark_background"
+    android:drawableTop="@drawable/ic_star"
+    android:padding="5dp"
+    android:layout_margin="10dp"
+    android:textStyle="bold"
+    android:text="Welcome to this tutorial demo section.\nIn this section you will learn about Design Element that you previously clicked.\nPlease Swipe Left to Go Back to the previous screen.\nAnd click the Read Tutorial button if you want to find more info about it.
+    " />

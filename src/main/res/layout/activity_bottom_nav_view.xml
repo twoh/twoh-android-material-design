@@ -11,6 +11,14 @@
         layout="@layout/view_toolbar"
         />
 
+    <include
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bt_tutorial"
+        layout="@layout/view_tutorial_instruction"
+        />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/btm_nav"
         android:layout_width="match_parent"

@@ -1,5 +1,6 @@
 package id.web.twoh.coolandroiddesign;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -20,6 +21,8 @@ import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.firebase.analytics.FirebaseAnalytics;
+
+import id.web.twoh.coolandroiddesign.utils.Factory;
 
 /**
  * Created by Hafizh Herdi on 11/13/2016.
@@ -67,17 +70,19 @@ public class BaseAdsActivity extends AppCompatActivity {
             public void onAdLoaded(@NonNull InterstitialAd interstitialAdLoaded) {
                 super.onAdLoaded(interstitialAdLoaded);
                 interstitialAd = interstitialAdLoaded;
-                loadInterstitial();
+                decideToDisplay();
             }
         });
     }
 
     protected void readTheTutorial(String url){
-        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
-        CustomTabsIntent customTabsIntent = builder.build();
-        customTabsIntent.intent.putExtra(Intent.EXTRA_REFERRER,
-                Uri.parse(Intent.URI_ANDROID_APP_SCHEME + "//" + this.getPackageName()));
-        customTabsIntent.launchUrl(this, Uri.parse(url));
+        Factory.DialogRegulerYesNo("", "Lanjut baca tutorial di Web?", this, false, (dialog, which) -> {
+            CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+            CustomTabsIntent customTabsIntent = builder.build();
+            customTabsIntent.intent.putExtra(Intent.EXTRA_REFERRER,
+                    Uri.parse(Intent.URI_ANDROID_APP_SCHEME + "//" + this.getPackageName()));
+            customTabsIntent.launchUrl(this, Uri.parse(url));
+        }).show();
     }
 
     protected void displayInterstitial() {

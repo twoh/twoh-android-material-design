@@ -45,7 +45,7 @@
                     android:id="@+id/ivWallpaper"
                     android:layout_width="match_parent"
                     android:layout_height="275dp"
-                    android:src="@drawable/face2" />
+                    android:src="@drawable/bg_face" />
 
                 <TextView
                     android:id="@+id/tvVibrant"

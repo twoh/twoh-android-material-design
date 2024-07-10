@@ -3,7 +3,7 @@
     android:id="@+id/bt_tutorial"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:drawableEnd="@drawable/ic_help_white"
+    android:drawableStart="@drawable/ic_help_white"
     android:padding="5dp"
     android:layout_margin="10dp"
     android:text="Read The Tutorial" />

@@ -58,12 +58,13 @@ public class NavigationViewActivity extends BaseAdsActivity {
         super.onCreate(savedInstanceState);
 
         Button btTutorial = findViewById(R.id.bt_tutorial);
-        btTutorial.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                decideToDisplay();
-                readTheTutorial(Const.TUTORIAL_NAV);
-            }
+        btTutorial.setOnClickListener(v -> {
+            decideToDisplay();
+            readTheTutorial(Const.TUTORIAL_NAV);
+        });
+
+        findViewById(R.id.bt_exit).setOnClickListener(v -> {
+            finish();
         });
     }
 

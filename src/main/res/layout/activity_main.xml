@@ -28,6 +28,8 @@
             android:orientation="vertical"
             android:padding="10dp">
 
+            <include layout="@layout/view_tutorial_instruction"/>
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/bt_fab"
                 android:layout_width="match_parent"
@@ -118,6 +120,13 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:text="Bottom Navigation Tutorial" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_carousel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:text="Carousel Tutorial" />
 
         </LinearLayout>
     </ScrollView>

@@ -19,6 +19,8 @@
 
     <string name="banner_ad_unit_id">ca-app-pub-6916955256570875/3486554156</string>
     <string name="interstitial_ad_unit_id">ca-app-pub-6916955256570875/6717266152</string>
+    <string name="admob_app_id">ca-app-pub-6916955256570875~9533087755</string>
+    <string name="title_activity_carousel">CarouselActivity</string>
 
 
 </resources>

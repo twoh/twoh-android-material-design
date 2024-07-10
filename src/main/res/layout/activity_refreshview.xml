@@ -21,6 +21,10 @@
         ads:adUnitId="@string/banner_ad_unit_id"/>
 
     <include
+        layout="@layout/view_tutorial_instruction"
+        />
+
+    <include
         layout="@layout/view_readtutorialbutton"
         />
 
@@ -38,8 +42,10 @@
                 android:id="@+id/tv_helloworld"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/cardview_dark_background"
                 android:layout_marginTop="16dp"
                 android:gravity="center"
+                android:layout_margin="10dp"
                 android:text="Tarik ke bawah untuk Refresh" />
         </ScrollView>
 

@@ -12,6 +12,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.text.util.LinkifyCompat;
 
@@ -30,12 +31,16 @@ public class MainActivity extends BaseAdsActivity {
     private Button btRipple;
     private Button btRatingBar;
     private Button btNavBottom;
+    private Button btCarousel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
         super.onCreate(savedInstanceState);
         setupToolbar();
+
+        ((AppCompatTextView)findViewById(R.id.tv_tutorial_instruction)).setText("Welcome, please select which Material Design Tutorial you like to demo by clicking a button below");
+
         btFab = (Button) findViewById(R.id.bt_fab);
         btFab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -151,6 +156,11 @@ public class MainActivity extends BaseAdsActivity {
                 decideToDisplay();
                 startActivity(new Intent(MainActivity.this, BottomNavigationViewActivity.class));
             }
+        });
+
+        ((Button)findViewById(R.id.bt_carousel)).setOnClickListener( v -> {
+            decideToDisplay();
+            startActivity(new Intent(this, CarouselActivity.class));
         });
     }
 

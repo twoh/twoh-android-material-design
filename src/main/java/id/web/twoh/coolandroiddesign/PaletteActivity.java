@@ -54,7 +54,7 @@ public class PaletteActivity extends BaseAdsActivity{
 
     private void paintTextBackground() {
 
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.face2);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bg_face);
 
         Palette.from(bitmap).generate(palette -> {
             // ambil warna dari gambar menggunakan Palette

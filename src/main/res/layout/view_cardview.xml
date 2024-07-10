@@ -27,6 +27,34 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:text="Welcome"
+                    android:textColor="@color/twoh_primary"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Welcome to this tutorial demo section.\nIn this section you will learn about Design Element that you previously clicked.\nPlease Swipe Left to Go Back to the previous screen.\nAnd click the Read Tutorial button if you want to find more info about it." />
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/card_margin">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="Frédéric Chopin"
                     android:textColor="@color/twoh_primary"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title" />

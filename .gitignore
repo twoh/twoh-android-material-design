@@ -26,3 +26,8 @@ proguard/
 
 # Log Files
 *.log
+
+java_pid11184.hprof
+java_pid31988.hprof
+release/
+
